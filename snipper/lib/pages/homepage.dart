@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context,index) {
                 var article = snapshot.data!.articles[index];
                 return Container(
-                  height: 400,
+                  height: 300,
                   child: Flexible(
                     child: Column(
                       children: <Widget>[
@@ -49,19 +49,21 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Flexible(
                           child: (
-                            Container(
-                              child: ListView(
-                                children: [
-                                  ListTile(
-                                    title: Text(article.title),
+                            Column(
+                              children:[
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    child: Center(child: Text(article.title),),
                                   ),
-                                  ListBody(
-                                    children: [
-                                      Text(article.description)
-                                    ],
-                                  )
-                                ],
-                              ),
+                                ),
+                                Expanded(
+                                  flex: 2,
+                                  child: Container(
+                                    child:Center(child: Text(article.description),),
+                                  ),
+                                )
+                              ],
                             )
                           ),
                         ),
