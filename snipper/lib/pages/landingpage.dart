@@ -26,9 +26,22 @@ class _LandingPage extends State<LandingPage> {
       child: Scaffold(
         body: Container(
           padding: EdgeInsets.all(10),
-          child:  Image.network(
-            "https://picsum.photos/seed/picsum/1920/1080",
+          child:  Container(
+            margin: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: Offset(0, 3), // changes position of shadow
+              ),
+            ]
           ),
+            child: Image.network(
+              "https://picsum.photos/seed/picsum/1920/1080",
+            ),
+          )
           // child: FutureBuilder<NewsModal>(
           //   future: _newsModal,
           //   builder: (context, snapshot) {
