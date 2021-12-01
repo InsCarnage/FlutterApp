@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:snipper/models/newsinfo.dart';
-import 'package:snipper/pages/addpage.dart';
-import 'package:snipper/pages/friendspage.dart';
-import 'package:snipper/pages/landingpage.dart';
-import 'package:snipper/pages/listpage.dart';
 import 'package:snipper/services/api_manger.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,36 +9,20 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-
 class _HomePageState extends State<HomePage> {
   //Future<NewsModal>? _newsModal ;
-  int _widgetIndex = 0;
+
   @override
   void initState(){
     //_newsModal = API_Manager().getNews();
     super.initState();
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _widgetIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    
     return SafeArea(
       child: Scaffold(
-        body: IndexedStack(
-          index: _widgetIndex,
-          children: const [
-            LandingPage(),
-            Listpage(),
-            Friendspage(),
-          ],
-        ),
-      
+        body: Container(
           // child: FutureBuilder<NewsModal>(
           //   future: _newsModal,
           //   builder: (context, snapshot) {
@@ -96,26 +76,6 @@ class _HomePageState extends State<HomePage> {
           //     }
           //   },
           // ),
-        
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Feed',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.list),
-              label: 'My List',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.people),
-              label: 'Friends',
-            ),
-          ],
-          currentIndex: _widgetIndex,
-          selectedItemColor: Colors.lightBlue[800],
-          onTap: _onItemTapped,
         ),
       ),
     );
