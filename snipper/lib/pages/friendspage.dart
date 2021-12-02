@@ -34,6 +34,17 @@ class _Friendspage extends State<Friendspage> {
           child: ListView(
             children: [
               Container(
+                margin: EdgeInsets.only(bottom: 20, top: 20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    hintText: 'Enter a search term',
+                    focusColor: HexColor("990000"),
+                    hoverColor: HexColor("990000"),
+                  ),
+                ),
+              ),
+              Container(
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
