@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snipper/main.dart';
 import 'package:snipper/models/newsinfo.dart';
 import 'package:snipper/pages/addpage.dart';
 import 'package:snipper/pages/homepage.dart';
@@ -24,6 +25,7 @@ class _Listpage extends State<Listpage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: HexColor("121212"),
         body: Container(
           child: Image.network(
             "https://source.unsplash.com/random/1920x1080/?img=1",
@@ -88,7 +90,6 @@ class _Listpage extends State<Listpage> {
             Navigator.push(context, MaterialPageRoute(builder: (context) => AddItemspage()));
           },
           child: const Icon(Icons.add),
-          backgroundColor: Colors.blue,
         ),
       ),
     );

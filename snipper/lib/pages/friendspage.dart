@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:snipper/main.dart';
 import 'package:snipper/models/newsinfo.dart';
 import 'package:snipper/pages/addpage.dart';
 import 'package:snipper/pages/homepage.dart';
@@ -24,60 +27,90 @@ class _Friendspage extends State<Friendspage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: HexColor("121212"),
         body: Container(
-          child: Text("Friendspage"),
-          // child: FutureBuilder<NewsModal>(
-          //   future: _newsModal,
-          //   builder: (context, snapshot) {
-          //     if(snapshot.hasData){
-          //       return ListView.builder(
-          //         itemCount: snapshot.data!.articles.length,
-          //         itemBuilder: (context,index) {
-          //         var article = snapshot.data!.articles[index];
-          //         return Container(
-          //           height: 300,
-          //           child: Flexible(
-          //             child: Column(
-          //               children: <Widget>[
-          //                 Card(clipBehavior: Clip.antiAlias,
-          //                   shape: RoundedRectangleBorder(
-          //                   borderRadius: BorderRadius.circular(24),
-          //                   ),
-          //                   child: Image.network(
-          //                     article.urlToImage,
-          //                     fit: BoxFit.cover,
-          //                   )
-          //                 ),
-          //                 Flexible(
-          //                   child: (
-          //                     Column(
-          //                       children:[
-          //                         Expanded(
-          //                           flex: 1,
-          //                           child: Container(
-          //                             child: Center(child: Text(article.title),),
-          //                           ),
-          //                         ),
-          //                         Expanded(
-          //                           flex: 2,
-          //                           child: Container(
-          //                             child:Center(child: Text(article.description),),
-          //                           ),
-          //                         )
-          //                       ],
-          //                     )
-          //                   ),
-          //                 ),
-          //               ],
-          //             ),
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.only(top: 5,bottom: 5,left: 10,right: 10),
+          child: ListView(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: HexColor("000000"),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    ),
+                    
+                  ]
+                ), 
+                child: Row(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        
+                      ),
+                      width: 80,
+                      height: 80,
+                      margin: EdgeInsets.only(top: 10, bottom: 10, left: 10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100.0),
+                        child: Image.network(
+                          "https://picsum.photos/seed/picsum/1920/1080",
+                          height: 60,
+                          width: 60,
+                          fit: BoxFit.fill,
+                        ),
+                      )
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10),
+                      child: Text(
+                        "This user Name",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold
+                        ) 
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+          // child: Row(
+          //   children: [
+          //     Container(
+          //       margin: EdgeInsets.all(20),
+          //       decoration: BoxDecoration(
+          //         boxShadow: [
+          //           BoxShadow(
+          //             color: HexColor("000000"),
+          //             spreadRadius: 5,
+          //             blurRadius: 7,
+          //             offset: Offset(0, 3), // changes position of shadow
           //           ),
-          //         );
-          //       });
-          //     }
-          //     else{
-          //       return Center(child: CircularProgressIndicator());
-          //     }
-          //   },
+          //         ]
+          //       ),
+          //       child: Column(
+          //         children: [
+          //           Container(
+          //             height: 100,
+          //             decoration: BoxDecoration(
+          //               borderRadius: BorderRadius.circular(100),
+                        
+          //             ),
+                      
+          //             child: Image.network(
+          //               "https://picsum.photos/seed/picsum/1920/1080",
+          //             ),
+          //           )
+          //         ],
+          //       ),
+          //     )
+          //   ],
           // ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snipper/main.dart';
 import 'package:snipper/models/newsinfo.dart';
 import 'package:snipper/pages/addpage.dart';
 import 'package:snipper/pages/friendspage.dart';
@@ -99,6 +100,7 @@ class _HomePageState extends State<HomePage> {
         
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          backgroundColor: HexColor("121212"),
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -114,7 +116,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
           currentIndex: _widgetIndex,
-          selectedItemColor: Colors.lightBlue[800],
           onTap: _onItemTapped,
         ),
       ),
