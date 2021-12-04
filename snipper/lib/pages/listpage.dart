@@ -6,7 +6,7 @@ import 'package:snipper/pages/homepage.dart';
 import 'package:snipper/services/api_manger.dart';
 
 class Listpage extends StatefulWidget {
-  const Listpage({ Key? key }) : super(key: key);
+  const Listpage({Key? key}) : super(key: key);
 
   @override
   _Listpage createState() => _Listpage();
@@ -16,7 +16,7 @@ class _Listpage extends State<Listpage> {
   //Future<NewsModal>? _newsModal ;
   int _selectedIndex = 0;
   @override
-  void initState(){
+  void initState() {
     //_newsModal = API_Manager().getNews();
     super.initState();
   }
@@ -30,7 +30,7 @@ class _Listpage extends State<Listpage> {
           child: Image.network(
             "https://source.unsplash.com/random/1920x1080/?img=1",
             fit: BoxFit.cover,
-          ) ,
+          ),
           // child: FutureBuilder<NewsModal>(
           //   future: _newsModal,
           //   builder: (context, snapshot) {
@@ -87,7 +87,8 @@ class _Listpage extends State<Listpage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => AddItemspage()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AddItemspage()));
           },
           child: const Icon(Icons.add),
         ),
