@@ -3,8 +3,9 @@ import 'package:snipper/pages/homepage.dart';
 
 var url = Uri.parse('https://www.carnagehosting.com/api/');
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
+
 class HexColor extends Color {
   static int _getColorFromHex(String hexColor) {
     hexColor = hexColor.toUpperCase().replaceAll("#", "");
@@ -16,21 +17,21 @@ class HexColor extends Color {
 
   HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }
-class MyApp extends StatelessWidget {
-   MyApp({Key? key}) : super(key: key);
 
+class MyApp extends StatelessWidget {
+  MyApp({Key? key}) : super(key: key);
+
+  // ignore: prefer_final_fields
   ThemeData _darkTheme = ThemeData(
-    accentColor: HexColor("990000"),
-    brightness: Brightness.dark,
-    primaryColor: HexColor("990000"),
-    backgroundColor: HexColor("121212")
-  );
-            
+      accentColor: HexColor("990000"),
+      brightness: Brightness.dark,
+      primaryColor: HexColor("990000"),
+      backgroundColor: HexColor("121212"));
+
   ThemeData _lightTheme = ThemeData(
-    accentColor: Colors.pink,
-    brightness: Brightness.light,
-    primaryColor: Colors.blue
-  );
+      accentColor: Colors.pink,
+      brightness: Brightness.light,
+      primaryColor: Colors.blue);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
